@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // play the song
   function playTrack(index) {
     const track = musicList[index];
-    audioPlayer.src = `/music/${track.file}`;
+    audioPlayer.src = `/music/${track.file}`; 
     audioPlayer.play();
     trackTitle.textContent = track.title;
     currentTrackIndex = index;
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // prgoress bar jump
+  // progress bar jump
   progressSlider.addEventListener("input", () => {
     if (!isNaN(audioPlayer.duration)) {
       audioPlayer.currentTime = (progressSlider.value / 100) * audioPlayer.duration;
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // change bg function
   function changeBackground() {
     if (backgroundImages.length === 0) return;
-    backgroundContainer.style.backgroundImage = `url('${backgroundImages[backgroundIndex]}')`;
+    backgroundContainer.style.backgroundImage = `url('${backgroundImages[backgroundIndex]}')`;  // template literal ve tırnak eklendi
     backgroundIndex = (backgroundIndex + 1) % backgroundImages.length;
   }
 });
