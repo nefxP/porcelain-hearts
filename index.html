@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>porcelain hearts :3</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- bg container -->
+  <div id="background-container"></div>
+
+  <!-- main content -->
+  <div id="main-content">
+    <h1>fragile porcelain heart//handle with care</h1>
+    
+    <div id="music-player">
+      <div id="now-playing">playing: <span id="track-title">no selection yet</span></div>
+      <audio id="audio-player"></audio>
+
+      <label for="volume-slider">volume:</label>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" />
+      <button id="mute-btn" title="Mute / Unmute">🔈</button>
+
+      <label for="progress-slider">progress:</label>
+      <input type="range" id="progress-slider" min="0" max="100" value="0" />
+      <button id="play-pause-btn" title="Play / Pause">▶️</button>
+    </div>
+
+    <ul id="music-list">
+      <!-- js music -->
+    </ul>
+  </div>
+  
+
+  <script src="js/script.js"></script>
+</body>
+</html>
