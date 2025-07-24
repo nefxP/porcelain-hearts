@@ -5,17 +5,17 @@ const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// serve static files
-app.use(express.static(path.join(__dirname, "public")));
+// serve static files from root directory
+app.use(express.static(__dirname));
 
 // home page
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // return music list as json
 app.get("/api/music", (req, res) => {
-  const musicDir = path.join(__dirname, "public", "music");
+  const musicDir = path.join(__dirname, "music");
   fs.readdir(musicDir, (err, files) => {
     if (err) {
       return res.status(500).json({ error: "music folder could not be read." });
@@ -31,7 +31,7 @@ app.get("/api/music", (req, res) => {
 
 // return background images as json
 app.get("/api/backgrounds", (req, res) => {
-  const imagesDir = path.join(__dirname, "public", "images");
+  const imagesDir = path.join(__dirname, "images");
   fs.readdir(imagesDir, (err, files) => {
     if (err) {
       return res.status(500).json({ error: "images folder could not be read." });
